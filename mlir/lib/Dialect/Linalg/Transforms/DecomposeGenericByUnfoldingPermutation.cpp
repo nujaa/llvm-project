@@ -212,7 +212,6 @@ LogicalResult DecomposeProjectedPermutation::matchAndRewrite(
       Value emptyTensor =
           tensor::EmptyOp::create(rewriter, loc, outputShape, elType);
 
-
       auto broadcastOp = linalg::BroadcastOp::create(
           rewriter, loc, newInitValues[i], emptyTensor, broadcastedDims);
 
