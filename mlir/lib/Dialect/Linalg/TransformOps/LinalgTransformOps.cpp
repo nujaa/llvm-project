@@ -4315,7 +4315,7 @@ DiagnosedSilenceableFailure transform::FlattenElementwiseLinalgOp::applyToOne(
       })) {
     results.push_back(target);
     return mlir::emitSilenceableFailure(target->getLoc())
-           << "operators with broadcasting semantics are not supported";
+           << "broadcasting of non scalar operands is not supported";
   }
 
   // If rank <= 1, do nothing
